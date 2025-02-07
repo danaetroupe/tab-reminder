@@ -1,32 +1,33 @@
 {
-  "manifest_version": 3,
-  "name": "Tab Reminder",
-  "version": "1.0",
-  "description": "Tab revisit reminders",
-  "permissions": [
-    "tabs",
-    "history",
-    "alarms",
-    "storage"
-  ],
-  "developer": {
-    "name": "Danae Troupe",
-    "url": "https://github.com/danaetroupe"
-  },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "assets/reminder.png",
-      "48": "assets/reminder.png",
-      "128": "assets/reminder.png"
+    "manifest_version": 3,
+    "name": "Tab Reminder",
+    "version": "1.0",
+    "description": "Tab revisit reminders",
+    "permissions": [
+        "tabs",
+        "history",
+        "alarms",
+        "storage",
+        "contextMenus"
+    ],
+    "developer": {
+        "name": "Danae Troupe",
+        "url": "https://github.com/danaetroupe"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "assets/reminder.png",
+            "48": "assets/reminder.png",
+            "128": "assets/reminder.png"
+        }
+    },
+    "icons": {
+        "16": "assets/reminder.png",
+        "48": "assets/reminder.png",
+        "128": "assets/reminder.png"
     }
-  },
-  "icons": {
-    "16": "assets/reminder.png",
-    "48": "assets/reminder.png",
-    "128": "assets/reminder.png"
-  }
 }

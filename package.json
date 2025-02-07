@@ -1,0 +1,30 @@
+{
+  "name": "tab-reminder",
+  "version": "1.0.0",
+  "description": "Chromium extension to remind you to return to tabs",
+  "main": "background.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danaetroupe/tab-reminder.git"
+  },
+  "keywords": [
+    "extension",
+    "chrome",
+    "opera",
+    "tabs",
+    "reminder"
+  ],
+  "author": "Danae Troupe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danaetroupe/tab-reminder/issues"
+  },
+  "homepage": "https://github.com/danaetroupe/tab-reminder#readme",
+  "devDependencies": {
+    "chrome-types": "^0.1.337",
+    "typescript": "^5.7.3"
+  }
+}
