@@ -8,17 +8,18 @@
         "history",
         "alarms",
         "storage",
-        "contextMenus"
+        "contextMenus",
+        "notifications"
     ],
     "developer": {
         "name": "Danae Troupe",
         "url": "https://github.com/danaetroupe"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "src/background.js"
     },
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "frontend/index.html",
         "default_icon": {
             "16": "assets/reminder.png",
             "48": "assets/reminder.png",

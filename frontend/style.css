@@ -1,0 +1,43 @@
+:root {
+    --white-bg: #f0f8ff;
+    --white-hover: #dedddd;
+} 
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white-bg);
+    margin: 0;
+    text-align: center;
+    width: 250px;
+    border-radius: 100%;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+    border-radius: 20%;
+  }
+
+  .reminder-button, #custom {
+    background-color: var(--white-bg);
+    color: rgb(37, 37, 37);
+    border: none;
+    border-radius: 0px;
+    /*padding: 12px 10px;*/
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+    border-radius: 20%;
+  }
+
+  .reminder-button:hover, #custom:hover {
+    background-color: var(--white-hover);
+  }
