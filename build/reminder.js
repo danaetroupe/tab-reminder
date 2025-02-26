@@ -11,21 +11,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 var buttons = document.getElementsByClassName('reminder-button');
 for (let button of buttons) {
     button.addEventListener('click', () => {
-        console.log("Clicked");
         createReminder(button);
     });
 }
 function createReminder(button) {
     return __awaiter(this, void 0, void 0, function* () {
-        const time = parseInt(button.getAttribute('data-time'));
+        console.log(`String time: ${button.getAttribute('data-time')}`);
+        const time = parseFloat(button.getAttribute('data-time'));
         // Query the active tab in the current window
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             const tab = tabs[0]; // Get the first active tab
             if (tab) {
+                console.log(`Tab ID: ${tab.id}`);
                 // Create an alarm using the tab ID
                 chrome.alarms.create(`${tab.id}`, {
-                    delayInMinutes: time,
+                    delayInMinutes: time
                 });
+                console.log(`Time: ${time}`);
                 console.log("Alarm created");
             }
             else {
