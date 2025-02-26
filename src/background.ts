@@ -1,21 +1,6 @@
 // Store tab visit times
 let visitedTabs: Record<number, any> = {};
 
-// Listen for tab updates
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    // if (changeInfo.status === 'complete') {
-    // 	visitedTabs[tabId] = { url: tab.url, lastVisited: Date.now() };
-
-    // 	// Fetch user-configured interval
-    // 	chrome.storage.sync.get(['reminderInterval'], (result) => {
-    // 		const delay = result.reminderInterval || 5;  // Default to 5 minutes if not set
-    // 		chrome.alarms.create(`reminder-${tabId}`, {
-    // 			delayInMinutes: delay
-    // 		});
-    // 	});
-    // }
-});
-
 // Trigger the reminder
 chrome.alarms.onAlarm.addListener((alarm) => {
     console.log(`Tab ID: ${parseInt(alarm.name)}`);
@@ -39,10 +24,18 @@ async function createNotification(tabId: number) {
                 { title: 'Dismiss' }
             ],
             contextMessage: "Return to your tab.",
-            iconUrl: "../assets/reminder.png",
+            iconUrl: chrome.runtime.getURL("assets/reminder.png"),
             message: `${tab.title || tab.url} is waiting for you.`,
             priority: 2
-        });
+        },
+            function (id) {
+                if (chrome.runtime.lastError) {
+                    console.error("Notification error:", chrome.runtime.lastError.message);
+                } else {
+                    console.log("Notification created with ID:", id);
+                }
+            }
+        );
 
         console.log("Notification created.")
     } catch (error) {
